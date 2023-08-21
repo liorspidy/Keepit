@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>KeepIt Notes</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        background-color: rgb(220, 159, 15);
+        margin: 0;
+        width: 35em;
+        font-family: Arial, sans-serif; /* Add a font-family for better readability */
+      }
+
+      h1 {
+        font-size: 2em;
+        text-align: center;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      li {
+        padding: 5px;
+        border-bottom: 2px solid #7ac1e8;
+        background-color: white;
+        position: relative;
+        text-wrap: balance;
+        min-height: calc(2em + 5px);
+      }
+
+      li:last-child {
+        border: none;
+        min-height: calc(2em + 2px);
+      }
+
+      li:hover .close-button {
+        right: 0;
+        transition: 300ms;
+      }
+
+      .close-button {
+        border: none;
+        background-color: #72727249;
+        position: absolute;
+        right: -3em;
+        top: 0;
+        height: 2em;
+        width: 2em;
+      }
+
+      .close-button:hover {
+        color: white;
+        transition: 500ms;
+        background-color: #8e8e8ea7;
+        cursor: pointer;
+      }
+
+      @keyframes moveleft {
+        0% {
+          transform: translateX(3em);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      .emptyMessage {
+        font-size: 1.2em;
+        text-align: center;
+        background-color: white;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Your KeepIt Notes</h1>
+    <ul id="notesList"></ul>
+    <script src="popup.js"></script>
+  </body>
+</html>
