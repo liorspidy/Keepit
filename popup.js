@@ -20,10 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function createNoteItem(note) {
   const noteItem = document.createElement("li");
-  const noteItemText = document.createElement("span"); // Create a span element for the note text
-  noteItemText.textContent = note; // Set the note text
-
-  // Append the noteItemText to the noteItem
+  const noteItemText = document.createElement("span");
+  noteItemText.textContent = note;
   noteItem.appendChild(noteItemText);
 
   const closeButton = document.createElement("button");
@@ -33,7 +31,7 @@ function createNoteItem(note) {
   closeButton.addEventListener("click", function () {
     const noteItem = closeButton.closest("li");
     if (noteItem) {
-      const noteContent = noteItemText.textContent; // Use noteItemText.textContent instead
+      const noteContent = noteItemText.textContent;
 
       chrome.storage.local.get({ notes: [] }, function (result) {
         const updatedNotes = result.notes.filter((n) => n !== noteContent);
